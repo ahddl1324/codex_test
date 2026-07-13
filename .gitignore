@@ -14,6 +14,7 @@ venv/
 data/
 newSTDP/exp/
 sweep_results_10epoch/
+continuous_sweep_10epoch/
 wandb/
 *.log
 *.pt

@@ -1,0 +1,9 @@
+experiment	status	best_val	vs_baseline	test_loss	conv_filter_size	local_conv_stride	conv2_time_kernel	out_channel	n_hid	gru_hidden	lr	batch_size	changes_from_baseline
+e01	ok	0.1745159803	+0.0000000000	0.1758424840	20	10	19	32	32	32	5e-4	8	baseline
+e02	ok	0.1742164621	-0.0002995182	0.1754517646	40	10	17	32	32	32	5e-4	8	conv_filter_size:20->40,conv2_time_kernel:19->17
+e03	ok	0.1742765474	-0.0002394329	0.1755103679	40	20	9	32	32	32	5e-4	8	conv_filter_size:20->40,local_conv_stride:10->20,conv2_time_kernel:19->9
+e04	ok	0.1743141623	-0.0002018180	0.1755328799	80	40	4	32	32	32	5e-4	8	conv_filter_size:20->80,local_conv_stride:10->40,conv2_time_kernel:19->4
+e05	ok	0.1789392641	+0.0044232838	0.1809105289	20	10	19	32	16	32	5e-4	8	n_hid:32->16
+e06	ok	0.1683951186	-0.0061208617	0.1689437329	20	10	19	32	64	64	5e-4	4	n_hid:32->64,gru_hidden:32->64,batch_size:8->4
+e07	ok	0.1789533560	+0.0044373757	0.1809099148	20	10	19	32	32	64	1e-4	8	gru_hidden:32->64,lr:5e-4->1e-4
+e08	oom	NA	NA	NA	20	10	19	32	32	32	1e-3	16	lr:5e-4->1e-3,batch_size:8->16
