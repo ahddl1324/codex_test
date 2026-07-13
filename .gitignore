@@ -1,0 +1,25 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Secrets and local configuration
+.env
+.env.*
+
+# Training data and generated artifacts
+data/
+newSTDP/exp/
+sweep_results_10epoch/
+wandb/
+*.log
+*.pt
+*.pth
+
+# Editor and OS metadata
+.vscode/
+.idea/
+.DS_Store
