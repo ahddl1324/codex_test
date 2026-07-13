@@ -130,6 +130,10 @@ EXPERIMENTS=(
   'e22|20|20|10|32|64|64|4|5e-4|local_conv_stride:10->20,conv2_time_kernel:19->10,n_hid:32->64,gru_hidden:32->64,batch_size:8->4'
 )
 
+if (( $# > 0 )); then
+  EXPERIMENTS=("$@")
+fi
+
 for ((i=0; i<${#EXPERIMENTS[@]}; i+=2)); do
   IFS='|' read -r id1 cf1 cs1 ck1 oc1 nh1 gh1 bs1 lr1 changes1 <<< "${EXPERIMENTS[$i]}"
   run_one '0,1,2,3' "$id1" "$cf1" "$cs1" "$ck1" "$oc1" "$nh1" "$gh1" "$bs1" "$lr1" "$changes1" &
